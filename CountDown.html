@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Countdown Timer</title>
+</head>
+<body>
+  <h1>Countdown Timer</h1>
+  <p id="timer"></p>
+
+  <script>
+    // Set the countdown duration in seconds
+    var countdownDuration = 1 * 10; // 5 minutes in seconds
+
+    // Function to update the countdown timer
+    function updateTimer() {
+      var minutes = Math.floor(countdownDuration / 60);
+      var seconds = countdownDuration % 60;
+      
+      // Add leading zeros if necessary
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+      
+      // Display the timer in the "timer" paragraph element
+      document.getElementById('timer').innerText = minutes + ':' + seconds;
+
+      // Decrease the countdown duration by 1 second
+      countdownDuration--;
+
+      // Check if the countdown has reached zero
+      if (countdownDuration < 0) {
+        clearInterval(timerInterval); // Stop the timer
+        document.getElementById('timer').innerText = 'Time\'s up!';
+      }
+    }
+
+    // Call the updateTimer function every second
+    var timerInterval = setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>

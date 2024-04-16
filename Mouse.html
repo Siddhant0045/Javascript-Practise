@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resizable Div</title>
+<style>
+    .resizable-div {
+        width: 200px;
+        height: 100px;
+        background-color: lightblue;
+        transition: width 0.3s, height 0.3s;
+    }
+</style>
+</head>
+<body>
+<div class="resizable-div" id="myDiv"></div>
+
+<script>
+    const divElement = document.getElementById('myDiv');
+
+    divElement.addEventListener('mouseover', function() {
+        this.style.width = '300px';
+        this.style.height = '150px';
+    });
+
+    divElement.addEventListener('mouseout', function() {
+        this.style.width = '200px';
+        this.style.height = '100px';
+    });
+</script>
+</body>
+</html>

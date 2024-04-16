@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Hyperlink Styling</title>
+</head>
+<style>
+    *{
+        padding: 0px;
+        margin: 0px;
+    }
+    #linkContainer{
+        height: 100px;
+    }
+</style>
+<body>
+<div id="linkContainer"></div>
+
+<script>
+    const linkContainer = document.getElementById('linkContainer');
+
+    // Create a new anchor element
+    const link = document.createElement('a');
+    
+    // Set the href attribute to the target URL
+    link.href = 'https://vtop.vit.ac.in';
+
+    // Set the text content of the link
+    link.textContent = 'Visit VTOP';
+
+    // Set the color and background color properties
+    link.style.color = 'white';
+    link.style.backgroundColor = 'blue';
+    link.style.padding = '10px';
+    link.style.top = '10px';
+    link.style.borderRadius = '5px';
+    link.style.textDecoration = 'none'; // Remove underline
+    
+    // Append the link to the link container
+    linkContainer.appendChild(link);w
+</script>
+</body>
+</html>

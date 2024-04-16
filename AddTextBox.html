@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Textbox Dynamically</title>
+</head>
+<body>
+<div id="textBoxContainer">
+    <!-- Initial content: Add Textbox button -->
+    <button id="addButton">Add Textbox</button>
+</div>
+
+<script>
+    const textBoxContainer = document.getElementById('textBoxContainer');
+    const addButton = document.getElementById('addButton');
+
+    // Function to add two text boxes
+    function addTextboxes() {
+        // Create first text box
+        const textBox1 = document.createElement('input');
+        textBox1.type = 'text';
+        textBox1.placeholder = 'Enter text 1';
+
+        // Create second text box
+        const textBox2 = document.createElement('input');
+        textBox2.type = 'text';
+        textBox2.placeholder = 'Enter text 2';
+
+        // Append text boxes to container
+        textBoxContainer.appendChild(textBox1);
+        textBoxContainer.appendChild(textBox2);
+    }
+
+    // Add event listener to the button
+    addButton.addEventListener('click', addTextboxes);
+</script>
+</body>
+</html>

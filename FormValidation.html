@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Registration Form</title>
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+<body>
+    <h1>User Registration Form</h1>
+    <form id="registrationForm">
+        <!-- Personal Info -->
+        <h2>Personal Info</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" pattern="[0-9]{10}" required><br><br>
+
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" pattern=".{8,}" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female" required>
+        <label for="female">Female</label><br><br>
+
+        <label for="dob">DOB:</label>
+        <input type="date" id="dob" required><br><br>
+
+        <!-- Preferences -->
+        <h2>Preferences</h2>
+        <label for="favColor">Favorite Color:</label>
+        <select id="favColor" required>
+            <option value="">Choose one...</option>
+            <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
+            <option value="Green">Green</option>
+        </select><br><br>
+
+        <label for="interests">Interests:</label>
+        <select id="interests" onchange="toggleExtraDetails()" required>
+            <option value="">Choose one...</option>
+            <option value="Sports">Sports</option>
+            <option value="Music">Music</option>
+            <option value="Technology">Technology</option>
+            <option value="Arts">Arts</option>
+        </select><br><br>
+
+        <div id="extraDetails" class="hidden">
+            <label for="extraInfo">More Details:</label>
+            <input type="text" id="extraInfo">
+        </div><br><br>
+
+        <label for="languages">Languages:</label>
+        <select id="languages" multiple required>
+            <option value="">Choose One...</option>
+            <option value="English">English</option>
+            <option value="Spanish">Spanish</option>
+            <option value="French">French</option>
+            <option value="German">German</option>
+        </select><br><br>
+
+        <!-- Comments -->
+        <h2>Comments</h2>
+        <label for="comments">Comments:</label><br>
+        <textarea id="comments" rows="4" cols="50"></textarea><br><br>
+
+        <label for="photo">Upload a Photo:</label>
+        <input type="file" id="photo"><br><br>
+
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+
+    <div id="confirmation" class="hidden">
+        <h2>Confirmation</h2>
+        <div id="userDetails"></div>
+        <button onclick="submitForm()">Confirm</button>
+    </div>
+
+    <script>
+        function toggleExtraDetails() {
+            const interestsSelect = document.getElementById('interests');
+            const extraDetails = document.getElementById('extraDetails');
+
+            if (interestsSelect.value === 'Sports') {
+                extraDetails.classList.remove('hidden');
+            } else {
+                extraDetails.classList.add('hidden');
+            }
+        }
+
+        function validateForm() {
+            const form = document.getElementById('registrationForm');
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+            } else {
+                showConfirmation();
+            }
+        }
+
+        function showConfirmation() {
+            const confirmationSection = document.getElementById('confirmation');
+            const userDetails = document.getElementById('userDetails');
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const dob = document.getElementById('dob').value;
+            const favColor = document.getElementById('favColor').value;
+            const interests = document.getElementById('interests').value;
+            const languages = [...document.getElementById('languages').selectedOptions].map(option => option.value).join(', ');
+            const comments = document.getElementById('comments').value;
+            const photo = document.getElementById('photo').value;
+
+            userDetails.innerHTML = `
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Phone Number:</strong> ${phone}</p>
+                <p><strong>Email ID:</strong> ${email}</p>
+                <p><strong>Gender:</strong> ${gender}</p>
+                <p><strong>DOB:</strong> ${dob}</p>
+                <p><strong>Favorite Color:</strong> ${favColor}</p>
+                <p><strong>Interests:</strong> ${interests}</p>
+                <p><strong>Languages:</strong> ${languages}</p>
+                <p><strong>Comments:</strong> ${comments}</p>
+                <p><strong>Photo:</strong> ${photo ? 'Uploaded' : 'Not uploaded'}</p>
+            `;
+
+            confirmationSection.classList.remove('hidden');
+        }
+
+        function submitForm() {
+            // Here you can submit the form data to a server or perform further actions
+            alert('Form submitted successfully!');
+        }
+    </script>
+</body>
+</html>

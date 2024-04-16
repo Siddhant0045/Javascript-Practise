@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draw Bear</title>
+<style>
+    canvas {
+        border: 1px solid black;
+    }
+</style>
+</head>
+<body>
+    <h1>Draw Bear</h1>
+    <canvas id="bearCanvas" width="400" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('bearCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw Bear
+        ctx.fillStyle = 'brown'; // Bear's body color
+        ctx.fillRect(100, 200, 200, 150); // Body
+
+        ctx.fillStyle = 'black'; // Bear's head color
+        ctx.fillRect(180, 120, 40, 80); // Head
+
+        ctx.fillStyle = 'white'; // Bear's eyes color
+        ctx.fillRect(185, 140, 10, 10); // Left eye
+        ctx.fillRect(205, 140, 10, 10); // Right eye
+
+        ctx.fillStyle = 'black'; // Bear's nose color
+        ctx.fillRect(200, 160, 10, 10); // Nose
+
+        ctx.strokeStyle = 'black'; // Bear's mouth color
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(195, 170);
+        ctx.lineTo(205, 170);
+        ctx.stroke();
+
+        ctx.fillStyle = 'brown'; // Bear's ears color
+        ctx.fillRect(160, 120, 20, 40); // Left ear
+        ctx.fillRect(220, 120, 20, 40); // Right ear
+    </script>
+</body>
+</html>

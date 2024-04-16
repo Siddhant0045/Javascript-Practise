@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draw and Color Square</title>
+</head>
+<body>
+    <canvas id="squareCanvas" width="200" height="200"></canvas>
+
+    <script>
+        const canvas = document.getElementById('squareCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw Square
+        ctx.fillStyle = 'green'; // Change color here
+        ctx.fillRect(100, 100, 100, 100); // (x, y, width, height)
+    </script>
+</body>
+</html>

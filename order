@@ -1,0 +1,65 @@
+1) Display a running digital clock at the top right corner of the page
+
+2) Add a hyperlink to the VIT homepage from javascript. Set its color and background color properties from javascript.
+
+3) Create a div and make its size bigger when the mouse is it and restore it to the original size when the mouse moves away.
+
+4) Have an "Add Textbox" button and on clicking it add two text boxes to the page.
+
+5) Have a "multiply" button and display the product of the above two numbers.
+
+6) Display a countdown timer.(minutes and seconds)
+
+7) Create a form with the following details:
+
+    1. Personal Info
+
+         a. Name
+
+         b. Phone Number
+
+         c. Email Id
+
+         d. Password
+
+         e. Gender
+
+         f. DOB
+
+    2. Preferences
+
+         a. Fav color - Choose one color
+
+         b. Interests (Sports, Music, Technology, Arts) (drop down)
+
+         c. Languages - Allow to choose many
+
+    3. Comments
+
+        a. Big editable area for entering other relevant details
+
+        b. Upload a photo
+
+    Finally a submit button
+
+    Validation requirements:
+
+    1. Check if all the values are entered or selected by the user from JavaScript. Display appropriate messages on errors.
+
+    2. Check the pattern for name, phone number and password fields.
+
+    3. When the user selects an Interest, enable a textbox to get more details. (like the sports name)
+
+    4. Finally, when the user submits the form, display all the details entered by the user and ask them to confirm it.
+
+8) Find the age from Dob - User input
+
+9) Read and print a two dimensional matrix - Use prompt for user input and store it in a 2d array.
+
+10) Draw the following images using canvas and color them
+
+11) Free Hand Drawing
+
+12) Rainfall Animation
+
+13) Leaves Falling

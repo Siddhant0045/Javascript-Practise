@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draw and Color Circle</title>
+</head>
+<body>
+    <canvas id="circleCanvas" width="200" height="200"></canvas>
+
+    <script>
+        const canvas = document.getElementById('circleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Draw Circle
+        ctx.beginPath();
+        ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+        ctx.fillStyle = 'blue'; // Change color here
+        ctx.fill();
+    </script>
+</body>
+</html>
